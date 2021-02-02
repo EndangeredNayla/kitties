@@ -1,120 +1,129 @@
 <!DOCTYPE HTML>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<title>Detonating Cats</title>
-		<link rel="stylesheet" type="text/css" href="style.css?incr=3" />
-	</head>
-	<body>
-		<!-- This is needed for some reason, because in some cases the browser loads
+
+<head>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">		<meta charset="utf-8" />
+	<title>Exploding Kitties Beta</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/game.css?incr=3" />
+</head><center>
+<div class="header">
+	<h1>Exploding Kitties Beta</h1>
+	<p>Build Date Feb 1, 2021</p>
+</div></center>
+</div>
+
+<body>
+	<!-- This is needed for some reason, because in some cases the browser loads
 		a fresh copy of the JS but not the HTML (?!) -->
-		<input type="hidden" id="REVISION" value="9" />
+	<input type="hidden" id="REVISION" value="9" />
 
-		<noscript><h1>You need to enable Javascript</h1></noscript>
+	<noscript>
+		<h1>You need to enable Javascript</h1>
+	</noscript>
 
-		<div id="loading">
-			<p>Loading assets, please wait.</p>
-			<p><span id="loading-assets">0</span> assets loaded.</p>
-			<p>(If this takes too long, try force-reloading with Ctrl+F5...)</p>
-		</div>
+	<div id="loading">
+		<p>Loading assets, please wait.</p>
+		<p><span id="loading-assets">0</span> assets loaded.</p>
+		<p>(If this takes too long, try force-reloading with Ctrl+F5...)</p>
+	</div>
 
-		<div id="welcome" class="reveal">
-			<table>
-				<tr>
-					<td class="welcome-pane">
-						<h1>Welcome to DETONATING CATS <small>(beta)</small></h1>
-						<table id="login-form">
-							<tr>
-								<td><label for="welcome-username">Your name:</label></td>
-								<td><input id="welcome-username" placeholder="Dunce" /></td>
-							</tr>
-							<tr>
-								<td><label for="welcome-lobby">Lobby name:</label></td>
-								<td><input id="welcome-lobby" placeholder="chuff" /></td>
-							</tr>
-						</table>
-						<button id="welcome-join">Join!</button>
-					</td>
-					<td class="welcome-pane">
-						<h1>Changelog</h1>
-						<span id="changelog-container"></div>
-					</td>
-				</tr>
-				<tr id="privacy"><td>
-					<p>Privacy notice: game and chat messages may be logged to help with debugging.
-					These logs will not be shared. Your IP address and browser fingerprint are never logged.</p>
-				</td></tr>
-			</table>
-		</div>
+	<div id="welcome" class="reveal">
+		<table>
+			<tr>
+				<td class="welcome-pane">
+					<table id="login-form">
+						<tr>					
+							<td><label for="welcome-username">Name</label></td>
+							<td><input id="welcome-username" placeholder="John" /></td>
+						</tr>
+						<tr>
+							<td><label for="welcome-lobby">Room Name</label></td>
+							<td><input id="welcome-lobby" placeholder="ABCD" /></td>
+						</tr>
+					</table>
+					<button id="welcome-join">Connect</button>
+				</td>			
+	</td>
+	</tr>
+	<tr id="footer">
+		<td>
+			<h2><center>Made with ❤️ by Nora Hanegan.</center></h2>
+		</td>
+	</tr>
+	</table>
+	</div>
 
-		<div id="game-view" class="reveal">
-			<div id="board">
-				<div id="top-bar">
-					<span class="left-text shade">
-						DETONATING CATS (<a href="about.html" target="_BLANK">info</a>)
-					</span>
-					<span class="right-text shade">
-						<span id="player-name"></span>@<span id="lobby-name"></span>
-					</span>
-				</div>
-
-				<div id="discard-pile"></div>
-				<div id="draw-pile"></div>
-				<div id="draw-pile-animation" class="reveal">
-					<img src="assets/card_back.png" class="card" />
-				</div>
-				<span id="draw-pile-counter" class="reveal">
-					Cards left:
-					<span id="remaining-card-count"></span>
+	<div id="game-view" class="reveal">
+		<div id="board">
+			<div id="top-bar">
+				<span class="left-text shade">
+					<h3>Exploding Kitties Beta | <span id="lobby-name"></span></h3></a>
 				</span>
-
-				<div id="message-container" class="reveal">
-					<span id="message"></span>
-				</div>
-
-				<div id="card-deck">
-				</div>
-
-				<div id="card-hud" class="card-hud reveal"></div>
-				<div id="card-hud-3-wrapper" class="card-hud reveal">
-					<div id="card-hud-3"></div>
-				</div>
-
-				<div id="modal-container"></div>
-			</div> <!-- /board -->
-
-			<div id="buttons-container">
-				<button id="sort-button">Sort Cards</button>
-				<button id="2x-button" class="combo-btn">2 of a kind</button>
-				<button id="3x-button" class="combo-btn">3 of a kind</button>
-				<button id="mute-button">Mute sound</button>
+				<span class="right-text shade">
+					<h3><span id="player-name"></span></h3>
+				</span>
 			</div>
 
-			<div id="sidebar">
-				<div class="sidebar-box">
-					<h1>Players</h1>
-					<ul id="player-list"></ul>
-				</div>
-				<div class="sidebar-box">
-					<h1>Spectators</h1>
-					<ul id="spectator-list"></ul>
-				</div>
-				<div class="sidebar-box" id="game-log-container">
-					<h1>Game log</h1>
-					<div id="game-log"></div>
-				</div>
-				<div class="sidebar-box" id="chat-container">
-					<input type="text" id="chat-message" placeholder="Chat message..." />
-				</div>
-			</div> <!-- /sidebar -->
-		</div> <!-- /game-view -->
+			<div id="discard-pile"></div>
+			<div id="draw-pile"></div>
+			<div id="draw-pile-animation" class="reveal">
+				<img src="assets/card_back.png" class="card" />
+			</div>
+			<span id="draw-pile-counter" class="reveal">
+				Cards Left:
+				<span id="remaining-card-count"></span>
+			</span>
 
-		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" type="text/javascript"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" type="text/javascript"></script>
+			<div id="message-container" class="reveal">
+				<span id="message"></span>
+			</div>
 
-		<script src="util.js" type="text/javascript"></script>
-		<script src="game.js" type="text/javascript"></script>
-		<script src="strings.js?incr=1" type="text/javascript"></script>
-		<script src="init.js" type="text/javascript"></script>
-	</body>
+			<div id="card-deck">
+			</div>
+
+			<div id="card-hud" class="card-hud reveal"></div>
+			<div id="card-hud-3-wrapper" class="card-hud reveal">
+				<div id="card-hud-3"></div>
+			</div>
+
+			<div id="modal-container"></div>
+		</div> <!-- /board -->
+
+		<div id="buttons-container">
+			<button id="sort-button">Sort Cards <i class="fas fa-sync-alt"></i></button>
+			<button id="twokind-button" class="combo-btn">2 Of A Kind</button>
+			<button id="threekind-button" class="combo-btn">3 Of A Kind</button>
+			<button id="mute-button">Mute Game <i class="fas fa-volume-up"></i></button>
+		</div>
+
+		<div id="sidebar">
+			<div class="sidebar-box">
+				<h1>Players <i class="fas fa-user fa-xs"></i></h1>
+				<ul id="player-list"></ul>
+			</div>
+			<div class="sidebar-box">
+				<h1>Spectators <i class="fas fa-glasses fa-xs"></i></h1>
+				<ul id="spectator-list"></ul>
+			</div>
+			<div class="sidebar-box" id="game-log-container">
+				<h1>Game Log <i class="fas fa-scroll fa-xs"></i></h1>
+				<div id="game-log"></div>
+			</div>
+			<div class="sidebar-box" id="chat-container">
+				<input type="text" id="chat-message" placeholder="Chat..." />
+			</div>
+		</div> <!-- /sidebar -->
+	</div> <!-- /game-view -->
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" type="text/javascript"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"
+		type="text/javascript"></script>
+	<script src="https://kit.fontawesome.com/7f6c908d87.js" crossorigin="anonymous"></script>
+	<script src="assets/js/util.js" type="text/javascript"></script>
+	<script src="assets/js/game.js" type="text/javascript"></script>
+	<script src="assets/js/strings.js?incr=1" type="text/javascript"></script>
+	<script src="assets/js/init.js" type="text/javascript"></script>
+</body>
+
 </html>

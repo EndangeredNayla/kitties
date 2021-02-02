@@ -1,8 +1,10 @@
-# Detonating Cats
+# Exploding Kitties
 
-A web-based clone of the popular _[Exploding Kittens](https://explodingkittens.com)_ card game. I wrote this
-because I wanted to play the game online with my friends during the December 2020 coronavirus lockdown and
-was dissatisfied with the existing clones of the game.
+A fork of [Detinating Cats](https://github.com/albino/wwwcats) which is a web-based clone of the popular _[Exploding Kittens](https://explodingkittens.com)_ card game.
+
+
+# Info from Detinating Cats
+I wrote this because I wanted to play the game online with my friends during the December 2020 coronavirus lockdown and was dissatisfied with the existing clones of the game.
 
 ## Features
 

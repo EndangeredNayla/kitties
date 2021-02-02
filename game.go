@@ -515,7 +515,7 @@ func (g *Game) playsCombo(player *Client, card string, num int) {
 		g.favourType = 3
 		player.sendMsg("q steal_who")
 	} else {
-		log.Fatal("what the chuff??")
+		log.Fatal("what the catch??")
 	}
 }
 
