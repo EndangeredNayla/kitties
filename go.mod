@@ -1,4 +1,4 @@
-module github.com/albino/wwwcats
+module github.com/albino/kitties
 
 go 1.14
 

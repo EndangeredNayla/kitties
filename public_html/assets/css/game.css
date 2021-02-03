@@ -1,6 +1,7 @@
 * {
 	margin: 0;
 	font-family: 'Yusei Magic', sans-serif;
+	text-align: center;
 }
 
 .reveal {
@@ -11,22 +12,30 @@ div#loading, div#welcome {
 	margin: 10px;
 }
 div#welcome > p {
+	display: flex;
+	justify-content: center;
 	margin-bottom: 10px;
 }
 div#welcome > table {
-	max-width: 800px;
+	display: flex;
+	justify-content: center;
 }
 td.welcome-pane {
-	padding: 20px;
-	height: 300px;
 }
 td.welcome-pane > h1 {
 	font-size: 24px;
 	margin-bottom: 10px;
 }
 table#login-form {
-	margin-bottom: 10px;
+	display: flex;
+	justify-content: center;
 }
+
+table#room-form {
+	display: flex;
+	justify-content: center;
+}
+
 tr#privacy {
 	font-size: 10px;
 	text-decoration: italic;
@@ -158,6 +167,18 @@ span#message {
 	border-radius: 10px;
 	border: 5px solid white;
 }
+
+#welcome-join {
+	background-color: #4CAF50; /* Green */
+	border: none;
+	color: white;
+	padding: 10px 21px;
+	margin: 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
 #sort-button {
 	background-color: #4CAF50; /* Green */
 	border: none;
@@ -171,7 +192,7 @@ span#message {
   }
 
 #twokind-button {
-	background-color: #008CBA; /* Green */
+	background-color: #008CBA;
 	border: none;
 	color: white;
 	padding: 15px 32px;
@@ -184,7 +205,7 @@ span#message {
   }
 
   #threekind-button {
-	background-color: #008CBA; /* Green */
+	background-color: #008CBA;
 	border: none;
 	color: white;
 	margin: 10px;
@@ -196,7 +217,7 @@ span#message {
   }
 
   #mute-button {
-	background-color: #F44336; /* Green */
+	background-color: #F44336;
 	border: none;
 	color: white;
 	margin: 10px;
@@ -208,10 +229,12 @@ span#message {
   }
 span#draw-pile-counter {
 	position: absolute;
-	top: 415px;
+	top: 350px;
 	right: 1px;
+	left: 492px;
 	width: 185px;
 	color: white;
+	font-size: 32px;
 	text-shadow: 1px 1px 1px #222;
 }
 

@@ -6,11 +6,10 @@
 	<link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">		<meta charset="utf-8" />
 	<title>Exploding Kitties Beta</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/game.css?incr=3" />
-</head><center>
+</head>
 <div class="header">
 	<h1>Exploding Kitties Beta</h1>
-	<p>Build Date Feb 2, 2021</p>
-</div></center>
+	<p>Build Date Feb 3, 2021</p>
 </div>
 
 <body>
@@ -33,12 +32,14 @@
 			<tr>
 				<td class="welcome-pane">
 					<table id="login-form">
-						<tr>					
-							<td><label for="welcome-username">Name</label></td>
+						<tr>
+							<h3>Name</h3>
 							<td><input id="welcome-username" placeholder="John" /></td>
 						</tr>
+					</table>
+					<table id="room-form"
 						<tr>
-							<td><label for="welcome-lobby">Room Name</label></td>
+							<h3>Room Code</h3>
 							<td><input id="welcome-lobby" placeholder="ABCD" /></td>
 						</tr>
 					</table>
@@ -46,9 +47,9 @@
 				</td>			
 	</td>
 	</tr>
-	<tr id="footer">
+	<tr id="footer-box">
 		<td>
-			<h2><center>Made with ❤️ by Nora Hanegan.</center></h2>
+			<h2>Made with ❤️ by Nora Hanegan.</h2>
 		</td>
 	</tr>
 	</table>
@@ -71,7 +72,6 @@
 				<img src="assets/card_back.png" class="card" />
 			</div>
 			<span id="draw-pile-counter" class="reveal">
-				Cards Left:
 				<span id="remaining-card-count"></span>
 			</span>
 

@@ -1,6 +1,6 @@
 # Exploding Kitties
 
-A fork of [Detinating Cats](https://github.com/albino/wwwcats) which is a web-based clone of the popular _[Exploding Kittens](https://explodingkittens.com)_ card game.
+A fork of [Detinating Cats](https://github.com/albino/kitties) which is a web-based clone of the popular _[Exploding Kittens](https://explodingkittens.com)_ card game.
 
 
 # Info from Detinating Cats
@@ -38,7 +38,7 @@ $ # Or, for a statically linked, stripped binary:
 $ CGO_ENABLED=0 go build -ldflags "-s -w"
 ```
 
-Just run the `wwwcats` binary to start the server, and `./wwwcats -h` for help with more options.
+Just run the `kitties` binary to start the server, and `./kitties -h` for help with more options.
 
 ## License
 
