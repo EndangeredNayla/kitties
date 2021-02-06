@@ -1,6 +1,6 @@
 # Exploding Kitties
 
-A fork of [Detinating Cats](https://github.com/albino/kitties) which is a web-based clone of the popular _[Exploding Kittens](https://explodingkittens.com)_ card game.
+A fork of [Detinating Cats](https://github.com/albino/wwwcats) which is a web-based clone of the popular _[Exploding Kittens](https://explodingkittens.com)_ card game.
 
 
 # Info from Detinating Cats
