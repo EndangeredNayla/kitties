@@ -2,6 +2,8 @@
 	margin: 0;
 	font-family: 'Yusei Magic', sans-serif;
 	text-align: center;
+	background: #000000;
+	color: white;
 }
 
 .reveal {
@@ -18,6 +20,7 @@ div#welcome > p {
 }
 div#welcome > table {
 	display: flex;
+	font-size: 24px;
 	justify-content: center;
 }
 td.welcome-pane {
@@ -26,14 +29,15 @@ td.welcome-pane > h1 {
 	font-size: 24px;
 	margin-bottom: 10px;
 }
+
 table#login-form {
-	display: flex;
-	justify-content: center;
+	opacity: 100%;
+	width: 100%;
 }
 
 table#room-form {
-	display: flex;
-	justify-content: center;
+	opacity: 100%;
+	width: 100%;
 }
 
 tr#privacy {
@@ -68,8 +72,8 @@ div#board {
 	border: 5px solid #ffffff;
 	position: absolute;
 	border-radius: 25px;
-	top: 20px;
-	left: 20px;
+	top: 0px;
+	left: 0px;
 }
 
 .shade {
