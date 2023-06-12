@@ -190,7 +190,7 @@ var GameState = function() {
 
 			for (var i=1; i < parts.length; i++) {
 				let encoded = entities(parts[i]);
-				$("#spectator-list").append("<li>"+encoded+"</li>");
+				$("#spectator-list").append(encoded+"</li>");
 			}
 
 			return;
