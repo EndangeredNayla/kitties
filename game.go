@@ -504,19 +504,9 @@ func (g *Game) playsCombo(player *Client, card string, num int) {
 
 	g.history = nil // TODO
 
-	if num == 2 {
-		// 2 of a kind - random card
-		g.favouring = player
-		g.favourType = 2
-		player.sendMsg("q random_who")
-	} else if num == 3 {
-		// 3 of a kind - 'stealing' a card
-		g.favouring = player
-		g.favourType = 3
-		player.sendMsg("q steal_who")
-	} else {
-		log.Fatal("what the catch??")
-	}
+	g.favouring = player
+	g.favourType = 2
+	player.sendMsg("q random_who")
 }
 
 func (g *Game) answersQuestion(player *Client, question string, answer string) {
