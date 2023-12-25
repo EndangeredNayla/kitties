@@ -4,11 +4,11 @@ import (
 	"flag"
 	"log"
 	"net/http"
-
 	"github.com/gorilla/websocket"
+	"crypto/tls"
 )
 
-var addr = flag.String("l", ":8080", "http service address")
+var addr = flag.String("l", ":8443", "https service address") // Change port to 8443 for HTTPS
 
 var REVISION = 9
 
@@ -27,21 +27,35 @@ func main() {
 		handleConnections(w, r, lobbies)
 	})
 
-	// Start the server
+	// Create TLS configuration with TLS version 1.2
+	tlsConfig := &tls.Config{
+		MinVersion: tls.VersionTLS12,
+	}
+
+	// Start the server with TLS support
+	server := &http.Server{
+		Addr:      *addr,
+		TLSConfig: tlsConfig,
+	}
+
 	log.Println("Now listening on", *addr)
-	log.Fatal(http.ListenAndServe(*addr, nil))
+	log.Fatal(server.ListenAndServeTLS("cert.pem", "key.pem")) // Replace cert.pem and key.pem with your SSL certificate and private key files
 }
 
 var upgrader = websocket.Upgrader{
 	ReadBufferSize:  1024,
 	WriteBufferSize: 1024,
+	CheckOrigin: func(r *http.Request) bool {
+		// Allow all connections, adjust this according to your security needs
+		return true
+	},
 }
 
 // Upgrade incoming connections to websockets
 func handleConnections(w http.ResponseWriter, r *http.Request, lobbies map[string]*Lobby) {
 	conn, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
-		log.Println(err)
+		log.Println("WebSocket upgrade error:", err)
 		return
 	}
 
@@ -51,4 +65,6 @@ func handleConnections(w http.ResponseWriter, r *http.Request, lobbies map[strin
 	// Hand the client off to these goroutines which will handle all i/o
 	go client.readPump(lobbies)
 	go client.writePump()
+
+	log.Println("WebSocket connection established.")
 }
